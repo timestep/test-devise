@@ -1,2 +1,6 @@
-<h1>Static#home</h1>
-<p>Find me in app/views/static/home.html.erb</p>
+<% if current_user %>
+	<%= link_to "LogIn", new_user_session %>
+	<%= link_to "Sign UP", new_user_registration %>
+<% else %>
+	<%= link_to "Sign OUt", destroy_user_session %>
+<% end <%></%>
