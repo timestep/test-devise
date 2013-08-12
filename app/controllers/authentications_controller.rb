@@ -4,6 +4,7 @@ class AuthenticationsController < ApplicationController
   end
 
   def create
+    binding.pry
     render :text => auth_hash
   end
 
@@ -16,6 +17,6 @@ class AuthenticationsController < ApplicationController
   private
 
   def auth_hash
-    request.env['omniauth.auth']
+    request.env["omniauth.auth"]
   end
 end

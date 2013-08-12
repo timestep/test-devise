@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'devise'
 gem 'omniauth'
+gem 'omniauth-twitter'
 gem 'omniauth-steam'
 
 gem "mocha", group: :test
@@ -32,7 +33,21 @@ gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
+group :development, :test do
 
+	gem 'rspec-rails'
+	gem 'capybara'
+	gem 'capybara-webkit'
+	gem 'factory_girl_rails'
+	gem 'pry-rails'
+	gem 'pry'
+	gem 'pry-remote'
+	gem 'pry-stack_explorer'
+	gem 'pry-debugger'
+	# gem "spork-rails"
+	gem 'railroady'
+  gem 'launchy'
+end
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
