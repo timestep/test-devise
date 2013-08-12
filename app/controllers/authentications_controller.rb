@@ -4,17 +4,18 @@ class AuthenticationsController < ApplicationController
   end
 
   def create
-    @authentication = Authentication.new(params[:authentication])
-    if @authentication.save
-      redirect_to authentications_url, :notice => "Successfully created authentication."
-    else
-      render :action => 'new'
-    end
+    render :text => auth_hash
   end
 
   def destroy
     @authentication = Authentication.find(params[:id])
     @authentication.destroy
     redirect_to authentications_url, :notice => "Successfully destroyed authentication."
+  end
+
+  protected
+
+  def auth_hash
+    request.env['omniauth.auth']
   end
 end
