@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  devise :omniauthable, :omniauth_providers => [:steam]
+  # devise :omniauthable, :omniauth_providers => [:steam]
 
 end

@@ -13,7 +13,7 @@ class AuthenticationsController < ApplicationController
     redirect_to authentications_url, :notice => "Successfully destroyed authentication."
   end
 
-  protected
+  private
 
   def auth_hash
     request.env['omniauth.auth']
