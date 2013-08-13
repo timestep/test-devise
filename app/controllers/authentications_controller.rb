@@ -1,11 +1,14 @@
 class AuthenticationsController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   def index
     @authentications = Authentication.all
   end
 
   def create
-    binding.pry
-    render :text => auth_hash
+    # binding.pry
+    current_user.authentications.find_or_create_by_provider_and_uid(auth['provider'], auth['uid'])
+    flash[:notice] = "Authentication successful."
+    redirect_to root_path
   end
 
   def destroy
