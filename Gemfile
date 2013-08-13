@@ -20,6 +20,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-steam'
+gem 'omniauth-facebook'
 
 gem "mocha", group: :test
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
