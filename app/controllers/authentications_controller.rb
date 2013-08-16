@@ -12,8 +12,8 @@ class AuthenticationsController < ApplicationController
     current_user.authentications.find_or_create_by_provider_and_uid(auth['provider'], auth['uid'])
     # binding.pry
     flash[:notice] = "Authentication successful."
-    redirect_to root_path
-    binding.pry
+    redirect_to authentications_path
+    # binding.pry
   end
 
   def destroy
