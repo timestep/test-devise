@@ -7,6 +7,10 @@ class AuthenticationsController < ApplicationController
     binding.pry
   end
 
+  def show
+    @authentication = Authentication.find(params[:id])
+  end
+
   def create
     # binding.pry
     auth = auth_hash
