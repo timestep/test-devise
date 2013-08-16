@@ -4,7 +4,7 @@ class AuthenticationsController < ApplicationController
 
   def index
     @authentications = Authentication.all
-    binding.pry
+    # binding.pry
   end
 
   def show
