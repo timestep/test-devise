@@ -4,12 +4,17 @@ class AuthenticationsController < ApplicationController
 
   def index
     @authentications = Authentication.all
+    binding.pry
   end
 
   def create
     # binding.pry
     auth = auth_hash
     current_user.authentications.find_or_create_by_provider_and_uid(auth['provider'], auth['uid'])
+    
+    # binding.pry
+    current_user.authentications.find_by_uid(auth['uid']).data = auth_hash
+    current_user.authentications.find_by_uid(auth['uid']).save
     # binding.pry
     flash[:notice] = "Authentication successful."
     redirect_to authentications_path
